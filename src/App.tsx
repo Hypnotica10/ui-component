@@ -1,4 +1,4 @@
-import { Button, Checkbox, Radio } from "./components";
+import { Button, Checkbox, Radio, SocialButton } from "./components";
 
 function App() {
   return (
@@ -22,6 +22,12 @@ function App() {
         <div className="flex justify-center">
           <Radio name="gender" id="male" text="male" />
           <Radio name="gender" id="female" text="female" />
+        </div>
+      </div>
+      <div className="mb-4">
+        <h1 className="text-3xl font-medium mb-4">Social Button</h1>
+        <div className="flex justify-center">
+          <SocialButton />
         </div>
       </div>
     </div>
