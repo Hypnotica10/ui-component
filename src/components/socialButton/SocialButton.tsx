@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { IoShareSocialOutline, IoCloseOutline } from "react-icons/io5";
 import {
@@ -66,7 +66,6 @@ const ToggleStyled = styled.div<{ isactive: string }>`
         transform: rotate(360deg);
     `}
   }
-
 `;
 
 const ListSocialIconStyled = styled.div`
@@ -91,7 +90,10 @@ const ItemSocialIconStyled = styled.li<{
   left: 0;
   transform-origin: 110px;
   transition: 500ms;
-  transition-delay: ${(props) => `calc(${50 * props.index}ms)`};
+  transition-delay: ${(props) =>
+    props.isscale === "true"
+      ? `calc(${100 * props.index}ms)`
+      : `calc(${100 * (4 - props.index)}ms)`};
   transform: ${(props) => `rotate(calc(${(360 / 4) * props.index}deg))`};
   scale: 0;
   overflow: hidden;
