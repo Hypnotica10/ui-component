@@ -1,7 +1,6 @@
-import { useEffect, useRef } from "react";
+import { RefObject, useEffect } from "react";
 
-export const useClickOutSide = (callback: () => void) => {
-  const ref = useRef<HTMLElement>(null);
+export const useClickOutSide = (callback: () => void, ref: RefObject<HTMLElement>) => {
 
   useEffect(() => {
     const handleClickOutSide = (e: MouseEvent | TouchEvent) => {
@@ -17,5 +16,5 @@ export const useClickOutSide = (callback: () => void) => {
       document.removeEventListener("mousedown", handleClickOutSide);
       document.removeEventListener("touchend", handleClickOutSide);
     };
-  }, [callback]);
+  }, [callback, ref]);
 };
